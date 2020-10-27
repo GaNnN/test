@@ -20,7 +20,7 @@ ${TARGET}:${OBJ}
 	mv ${TARGET} ${DIR_BIN}/
 
 ${OBJ}:
-	${CC} -c ${SRC_PATH} 
+	${CC} -c ${SRC_PATH} -I ${DIR_INC}
 	mv  ${OBJ} ${DIR_BIN}/
 	ar rcvs libmyod.a ${DIR_BIN}/*.o
 	${CC} -shared -o libmyod.so ${DIR_BIN}/*.o
